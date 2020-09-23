@@ -36,7 +36,7 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
 
 sudo add-apt-repository \
-    "deb [arch=$(uname -m | sed -e 's/x86_64/amd64/g')] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    "deb [arch=$(uname -m | sed -e 's/aarch64/arm64/g')] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 sudo apt-get update
 sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-ce containerd.io
@@ -53,4 +53,4 @@ sudo systemctl status docker.service
 echo "Docker Version:"
 docker version
 echo "Docker Info:"
-docker info
+#docker info
