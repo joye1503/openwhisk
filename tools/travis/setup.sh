@@ -31,7 +31,7 @@ function retry() {
 }
 
 # Python
-pip install --user couchdb
+pip install --user couchdb==3.1.1
 pip3 install --user couchdb==3.1.1
 
 # Ansible
