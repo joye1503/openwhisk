@@ -310,7 +310,7 @@ linux:
   version: 4.4.0-31
 
 couchdb:
-  version: 2.3
+  version: latest
 
 elasticsearch:
   version: 6.7.2
