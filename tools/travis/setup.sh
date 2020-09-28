@@ -31,15 +31,15 @@ function retry() {
 }
 
 # Python
-pip install --user couchdb
+sudo pip install --user couchdb
 pip3 install --user couchdb
 
 # Ansible
-pip install --user ansible==2.5.2
+sudo pip install --user ansible==2.5.2
 pip3 install --user ansible==2.5.2
 
 # Azure CosmosDB
-pip install --user pydocumentdb
+sudo pip install --user pydocumentdb
 pip3 install --user pydocumentdb
 
 # Support the revises log upload script
