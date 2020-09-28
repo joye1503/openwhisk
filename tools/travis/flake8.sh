@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-sudo pip3 install --user --upgrade flake8
+pip3 install --user --upgrade flake8
 
 # These files do not have a .py extension so flake8 will not scan them
 declare -a PYTHON_FILES=("."
