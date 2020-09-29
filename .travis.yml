@@ -61,6 +61,7 @@ before_install:
   - pip3 install --user setuptools six
   - sudo pip install --user humanize
   - sudo pip3 install --user humanize
+  - sudo find / -name "docker"
 
 install:
   - ./tools/travis/setup.sh
