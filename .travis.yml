@@ -55,13 +55,13 @@ cache:
 
 before_install:
   -  lsb_release -a
+  - sudo find / -name "docker"
   - ./tools/travis/docker.sh
   - sudo apt-get install -y python3-pip
   - pip install --user --upgrade pip setuptools six
   - pip3 install --user setuptools six
   - sudo pip install --user humanize
   - sudo pip3 install --user humanize
-  - sudo find / -name "docker"
 
 install:
   - ./tools/travis/setup.sh
