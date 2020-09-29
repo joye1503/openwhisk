@@ -28,6 +28,7 @@ sudo usermod -aG docker travis
 sudo apt-get clean
 sudo apt-get update
 sudo chmod 666 /var/run/docker.sock
+sudo apt-get remove docker docker-engine docker.io containerd runc
 # Need to update dpkg due to known issue: https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common dpkg
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -44,7 +45,7 @@ sudo add-apt-repository \
 #sudo dpkg -i docker-ce_18.03.1~ce~3-0~ubuntu_arm64.deb
 
 sudo apt-get update
-sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker.io 
+sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-ce containerd.io
 # daemon.json and flags does not work together. Overwritting the docker.service file
 # to remove the host flags. - https://docs.docker.com/config/daemon/#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts
 sudo mkdir -p /etc/systemd/system/docker.service.d
