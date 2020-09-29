@@ -28,8 +28,8 @@ sudo usermod -aG docker travis
 sudo apt-get clean
 sudo apt-get update
 sudo chmod 666 /var/run/docker.sock
-#sudo apt-get remove docker docker-engine docker.io containerd runc
-#sudo rm -rf /var/lib/docker
+sudo apt-get purge docker docker-engine docker.io containerd runc
+sudo rm -rf /var/lib/docker
 # Need to update dpkg due to known issue: https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common dpkg
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
