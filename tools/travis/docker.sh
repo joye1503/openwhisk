@@ -29,7 +29,7 @@ sudo apt-get clean
 sudo apt-get update
 sudo chmod 666 /var/run/docker.sock
 sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo rm -rf /var/lib/docker
+#sudo rm -rf /var/lib/docker
 # Need to update dpkg due to known issue: https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common dpkg
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -42,11 +42,11 @@ sudo add-apt-repository \
   "deb [arch=arm64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-#wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/arm64/docker-ce_18.03.1~ce~3-0~ubuntu_arm64.deb
-#sudo dpkg -i docker-ce_18.03.1~ce~3-0~ubuntu_arm64.deb
+wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/arm64/docker-ce_18.03.1~ce~3-0~ubuntu_arm64.deb
+sudo dpkg -i docker-ce_18.03.1~ce~3-0~ubuntu_arm64.deb
 
 sudo apt-get update
-sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-ce containerd.io
+sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install containerd.io
 # daemon.json and flags does not work together. Overwritting the docker.service file
 # to remove the host flags. - https://docs.docker.com/config/daemon/#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts
 sudo mkdir -p /etc/systemd/system/docker.service.d
@@ -58,6 +58,6 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl status docker.service
 echo "Docker Version:"
-sudo docker version
+docker version
 echo "Docker Info:"
-sudo docker info
+#sudo docker info
