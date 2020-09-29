@@ -79,8 +79,8 @@ jobs:
       name: "Unit Tests"
     - arch: arm64
       script:
-        - sudo ./tools/travis/runUnitTests.sh
-        - sudo ./tools/travis/checkAndUploadLogs.sh unit db
+        - ./tools/travis/runUnitTests.sh
+        - ./tools/travis/checkAndUploadLogs.sh unit db
       name: "Unit Tests"
     - script:
       - ./tools/travis/runSystemTests.sh
